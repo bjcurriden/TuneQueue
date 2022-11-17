@@ -1,0 +1,22 @@
+.user-container {
+  display: flex;
+  border: 1px solid darkgrey;
+  border-radius: 8px;
+  position: absolute;
+  left: 42%;
+  height: 12vh;
+  width: 30vw;
+  padding: 1rem;
+  margin: 1rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 1rem;
+}
+
+

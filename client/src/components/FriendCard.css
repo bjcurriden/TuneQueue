@@ -1,0 +1,23 @@
+
+.friend-container {
+  display: flex;
+  border: 1px solid darkgrey;
+  border-radius: 8px;
+  min-height: 16vh;
+  max-height: 20vh;
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: azure;
+}
+
+.friend-pic {
+  border-radius: 8px;
+  max-width: 15%;
+}
+
+h1 {
+  align-self: center;
+}
