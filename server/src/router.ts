@@ -1,24 +1,24 @@
 import { Router } from 'express';
 const router: Router = Router();
-const apiController = require('./controllers/playlist')
-const userController = require("./controllers/user")
+import { grantCode, refreshToken } from "./controllers/playlist";
+import { saveToQueue, getQueue, removeFromQueue, getFriends,addFriend, removeFriend} from "./controllers/user"
 
 
-router.post('/refresh', apiController.refreshToken)
+router.post('/refresh', refreshToken)
 
-router.post('/login', apiController.grantCode)
+router.post('/login', grantCode)
 
-router.post('/queue', userController.saveToQueue)
+router.post('/queue', saveToQueue)
 
-router.get("/queue", userController.getQueue)
+router.get("/queue", getQueue)
 
-router.delete('/queue/:name', userController.removeFromQueue)
+router.delete('/queue/:name', removeFromQueue)
 
-router.get("/friend", userController.getFriends)
+router.get("/friend", getFriends)
 
-router.post('/friend', userController.addFriend)
+router.post('/friend', addFriend)
 
-router.delete('/friend/:name', userController.removeFriend)
+router.delete('/friend/:name', removeFriend)
 
 
 export default router;

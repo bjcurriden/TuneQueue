@@ -1,5 +1,5 @@
-import Friend from "../models/Friend";
-import Playlist from "../models/Playlist";
+import { Friend } from "../models/Friend";
+import { Playlist } from "../models/Playlist";
 import { Request, Response }  from 'express';
 
 

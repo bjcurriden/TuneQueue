@@ -1,6 +1,7 @@
-const SpotifyWebApi = require("spotify-web-api-node");
+import SpotifyWebApi from "spotify-web-api-node";
+import { Request, Response } from "express";
 
-const refreshToken = (req, res) => {
+export const refreshToken = (req: Request, res: Response) => {
   const refreshToken = req.body.refreshToken;
   console.log("hi")
   const spotifyApi = new SpotifyWebApi({
@@ -15,15 +16,15 @@ const refreshToken = (req, res) => {
     .then(
       (data) => {
         console.log(data)
-        accessToken = data.body.access_token,
-        expiresIn = data.body.expires_in
+        const accessToken = data.body.access_token
+        const expiresIn = data.body.expires_in
       }).catch(error => {
         console.log(error)
         res.sendStatus(400)
       })
 }
 
-const grantCode = (req, res) => {
+export const grantCode = (req: Request, res: Response) => {
   const code = req.body.code;
   const spotifyApi = new SpotifyWebApi({
     redirectUri: 'http://localhost:3000',
@@ -43,5 +44,3 @@ const grantCode = (req, res) => {
       res.sendStatus(400)
     })
 }
-
-module.exports = { refreshToken, grantCode }
